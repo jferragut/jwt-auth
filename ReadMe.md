@@ -57,18 +57,18 @@ Don’t worry about this being secure, the hash is generated every time you refr
 	})
 })
 
-	.then(response =&gt; {
+	.then(response =&amp;gt; {
 		if(response.status !==  200){
 			console.error('Connection error, code  ',response.status);
 			return;
 		}
 
-		response.json(data =&gt; {
+		response.json(data =&amp;gt; {
 			// Your code here
 		})
 	})
 
-	.catch(err=&gt;{
+	.catch(err=&amp;gt;{
 		console.error(err)
 	});
 </code></pre>
