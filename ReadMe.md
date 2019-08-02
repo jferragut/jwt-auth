@@ -47,6 +47,7 @@ Afterwards, we will need to replace the part that says `your-top-secret-key` wit
 Visit [Wordpress Salt](https://api.wordpress.org/secret-key/1.1/salt/) and copy the string of characters between the single quotes. *(this is your secure hash)*
 
 Screenshot: (string to copy is highlighted)
+
 ![Screenshot of Wordpress Salt with String to Copy being highlighted](https://lh3.googleusercontent.com/GjakZSjMbdEdqHykFAAQBlbTVBI1DDASppkFCcnF0f5MHwxO_g6-Lf5EXIaMgztls7Pntp6Izrs) 
 
 Don't worry about this being secure, the hash is generated every time you refresh this page.
