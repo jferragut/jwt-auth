@@ -123,6 +123,48 @@ The return of this will include the following fields: Token, User Nicename,  Ema
 
 ## How to validate a token
 
+As we did with the creation of token, you can also validate the token with a predefined route.
+
+JWT Plugin provides the following route: `/jwt-auth/v1/token/validate`
+
+Let's look at a slimmed down fetch that will validate your token. This example will assume the same apiServer variable exists, also, we use a new `token` variable that should hold your token.
+
+```javascript
+fetch(apiServer+"/jwt-auth/v1/token", { 
+	method: "POST",
+	headers: {
+		'Content-Type': 'application/json', 
+		Authorization: 'Bearer ' + token
+	},
+})
+
+	.then(response => {
+		if(response.status !==  200){
+			console.error('Connection error, code  ',response.status);
+			return;
+		}
+
+		response.json(data => {
+			// Your code here
+		})
+	})
+
+	.catch(err=>{
+		console.error(err)
+	});
+```
+
+If your token is valid, the response should look something like this:
+
+```
+{
+  "code": "jwt_auth_valid_token",
+  "data": {
+    "status": 200
+  }
+}
+```
+
 
 ## Requests on a protected route
 
