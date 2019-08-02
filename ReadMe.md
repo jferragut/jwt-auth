@@ -58,18 +58,18 @@ fetch(apiServer+"/jwt-auth/v1/token", {
 	})
 })
 
-	.then(response =&gt; {
+	.then(response => {
 		if(response.status !==  200){
 			console.error('Connection error, code  ',response.status);
 			return;
 		}
 
-		response.json(data =&gt; {
+		response.json(data => {
 			// Your code here
 		})
 	})
 
-	.catch(err=&gt;{
+	.catch(err=>{
 		console.error(err)
 	});
 </code></pre>
