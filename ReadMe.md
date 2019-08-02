@@ -56,7 +56,6 @@ Don’t worry about this being secure, the hash is generated every time you refr
 		password: password
 	})
 })
-
 	.then(response =&gt; {
 		if(response.status !==  200){
 			console.error('Connection error, code  ',response.status);
