@@ -45,7 +45,8 @@ Don’t worry about this being secure, the hash is generated every time you refr
 <p>We will need to build a request using the Fetch API in our React Application to generate the token. (you should test this in <a href="https://www.getpostman.com/downloads/">Postman</a> first to be sure your server was setup correctly.)</p>
 <p>The essential data that must be sent to generate a token is the <code>Username</code> and <code>Password</code>.</p>
 <p>A basic request would look something like this:</p>
-<pre><code>fetch(apiServer+"/jwt-auth/v1/token", { 
+<pre><code>
+fetch(apiServer+"/jwt-auth/v1/token", { 
 	method: "POST",
 	headers: {
 		'Content-Type': 'application/json', 
@@ -57,18 +58,18 @@ Don’t worry about this being secure, the hash is generated every time you refr
 	})
 })
 
-	.then(response =&amp;gt; {
+	.then(response =&gt; {
 		if(response.status !==  200){
 			console.error('Connection error, code  ',response.status);
 			return;
 		}
 
-		response.json(data =&amp;gt; {
+		response.json(data =&gt; {
 			// Your code here
 		})
 	})
 
-	.catch(err=&amp;gt;{
+	.catch(err=&gt;{
 		console.error(err)
 	});
 </code></pre>
