@@ -45,36 +45,36 @@ Don’t worry about this being secure, the hash is generated every time you refr
 <p>We will need to build a request using the Fetch API in our React Application to generate the token. (you should test this in <a href="https://www.getpostman.com/downloads/">Postman</a> first to be sure your server was setup correctly.)</p>
 <p>The essential data that must be sent to generate a token is the <code>Username</code> and <code>Password</code>.</p>
 <p>A basic request would look something like this:</p>
-<pre><code>
-fetch(apiServer+"/jwt-auth/v1/token", { 
-	method: "POST",
-	headers: {
-		'Content-Type': 'application/json', 
-	},
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token function">fetch</span><span class="token punctuation">(</span>apiServer<span class="token operator">+</span><span class="token string">"/jwt-auth/v1/token"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> 
+	method<span class="token punctuation">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+	headers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		<span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span><span class="token punctuation">,</span> 
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-	body: JSON.stringify({
-		username: username,
-		password: password
-	})
-})
+	body<span class="token punctuation">:</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+		username<span class="token punctuation">:</span> username<span class="token punctuation">,</span>
+		password<span class="token punctuation">:</span> password
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-	.then(response => {
-		if(response.status !==  200){
-			console.error('Connection error, code  ',response.status);
-			return;
-		}
+	<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">!==</span>  <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+			console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Connection error, code  '</span><span class="token punctuation">,</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">return</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
 
-		response.json(data => {
-			// Your code here
-		})
-	})
+		response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>data <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+			<span class="token comment">// Your code here</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-	.catch(err=>{
-		console.error(err)
-	});
+	<span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+		console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p><em><strong>Note:</strong></em> <em>apiServer is a variable you should define to contain the base host for all your Wordpress API requests. username and password are also variables that should be pulled from your login form. We will discuss the process of creating a login more later, so for the time being, you are welcome to hard code these values for testing.</em></p>
-<p>As you can see, we are making a POST request to the <code>/jwt-auth/v1/token</code> route with our <code>username</code> and <code>password</code> being serialized in the body using <code>JSON.stringify</code>.</p>
+<p>As you can see, we are making a POST request to the <code>/jwt-auth/v1/token</code> route with our <code>username</code> and <code>password</code> being serialized in the body using <code>JSON.stringify</code>. The rest of the request is your basic fetch with error catching. <em>Make sure to do something with the token once you have generated it.</em></p>
+<p>The return of this will be a Token, User Nice Name,  Email, Username</p>
 <h2 id="how-to-validate-a-token">How to validate a token</h2>
 <h2 id="requests-on-a-protected-route">Requests on a protected route</h2>
 <h1 id="login-flow">Login Flow</h1>
