@@ -35,7 +35,8 @@ Open the <code>wp-config.php</code> file and search for a line that says <code>d
 <p>Afterwards, we will need to replace the part that says <code>your-top-secret-key</code> with a secure hash. We can do this by generating one using Wordpress Salt.</p>
 <p>Visit <a href="https://api.wordpress.org/secret-key/1.1/salt/">Wordpress Salt</a> and copy the string of characters between the single quotes. <em>(this is your secure hash)</em></p>
 <p>Screenshot: (string to copy is highlighted)<br>
-<img src="https://lh3.googleusercontent.com/GjakZSjMbdEdqHykFAAQBlbTVBI1DDASppkFCcnF0f5MHwxO_g6-Lf5EXIaMgztls7Pntp6Izrs" alt="Screenshot of Wordpress Salt with String to Copy being highlighted"> Don’t worry about this being secure, the hash is generated every time you refresh this page.</p>
+<img src="https://lh3.googleusercontent.com/GjakZSjMbdEdqHykFAAQBlbTVBI1DDASppkFCcnF0f5MHwxO_g6-Lf5EXIaMgztls7Pntp6Izrs" alt="Screenshot of Wordpress Salt with String to Copy being highlighted"><br>
+Don’t worry about this being secure, the hash is generated every time you refresh this page.</p>
 <p>After you have copied the string from Salt, replace the <code>your-top-secret-key</code> with it.</p>
 <h2 id="how-to-generate-a-token">How to generate a token</h2>
 <p>If you read the <a href="https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/">plugin documentation</a> they give examples for Angular, but unfortunately, not React.</p>
