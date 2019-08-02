@@ -15,11 +15,15 @@ This document assumes that you have:
 
 **Note:** All routes on the Wordpress API will start with `https://yourdomain.com/wp-json/`, where `yourdomain.com` should be replaced with the domain/host that you are using for your server. If you are using Gitpod, this will be a workspace URL that is assigned randomly to your instance. This will look something like:  `https://ffe4c36b-7ff9-4057-ba10-634bd14f8182.ws-us0.gitpod.io`
 
+<br>
+
 # JWT Plugin
 
 The journey begins with the setup and install of JWT on your Wordpress backend. We'll discuss a basic installation procedure, but if you require more, you can defer to the plugin documentation.
 
 Please make sure to Install the JWT Authentication plugin which can be found here: [JWT Plugin Download Page](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/)
+
+<br>
 
 ## How to setup JWT on Wordpress
 
@@ -54,6 +58,7 @@ Don't worry about this being secure, the hash is generated every time you refres
 
 After you have copied the string from Salt, replace the `your-top-secret-key` with it.
 
+<br>
 
 ## How to generate a token
 If you read the [plugin documentation](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) they give examples for Angular, but unfortunately, not React.
@@ -101,7 +106,20 @@ fetch(apiServer+"/jwt-auth/v1/token", {
 
 As you can see, we are making a POST request to the `/jwt-auth/v1/token` route with our `username` and `password` being serialized in the body using `JSON.stringify`. The rest of the request is your basic fetch with error catching. *Make sure to do something with the token once you have generated it.*
 
-The return of this will be a Token, User Nice Name,  Email, Username
+The return of this will include the following fields: Token, User Nicename,  Email, and User Display Name.
+
+**Example:**
+
+```
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9qd3QuZGV2IiwiaWF0IjoxNDM4NTcxMDUwLCJuYmYiOjE0Mzg1NzEwNTAsImV4cCI6MTQzOTE3NTg1MCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.YNe6AyWW4B7ZwfFE5wJ0O6qQ8QFcYizimDmBy6hCH_8",
+    "user_display_name": "admin",
+    "user_email": "admin@localhost.dev",
+    "user_nicename": "admin"
+}
+```
+
+<br>
 
 ## How to validate a token
 
