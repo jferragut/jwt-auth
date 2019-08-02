@@ -17,7 +17,7 @@ This document assumes that you have:
 
 <br>
 
-# JWT Plugin
+## JWT Plugin
 
 The journey begins with the setup and install of JWT on your Wordpress backend. We'll discuss a basic installation procedure, but if you require more, you can defer to the plugin documentation.
 
@@ -25,14 +25,14 @@ Please make sure to Install the JWT Authentication plugin which can be found her
 
 <br>
 
-## How to setup JWT on Wordpress
+### How to setup JWT on Wordpress
 
 Setting up the JWT plugin starts with modifying the `.htaccess` file, which controls settings for the apache server. After that, you will need to add a configuration value to the `wp-config.php` file.
 
 **Step 1:** 
 Open the `.htaccess` file and look for the line that says `RewriteEngine On`.  Immediately after this line, insert the following two lines of code:
 
-```
+```none
 RewriteCond %{HTTP:Authorization} ^(.*)
 RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
 ```
@@ -43,9 +43,11 @@ This will enable authorization on routes and require that you use Bearer Tokens 
 
 **Step 2:**  
 Open the `wp-config.php` file and search for a line that says `define( 'WP_DEBUG', true );`, and insert the following line under it:
-```
+
+```php
 define('JWT_AUTH_SECRET_KEY', 'your-top-secret-key');
 ```
+
 Afterwards, we will need to replace the part that says `your-top-secret-key` with a secure hash. We can do this by generating one using Wordpress Salt.
 
 Visit [Wordpress Salt](https://api.wordpress.org/secret-key/1.1/salt/) and copy the string of characters between the single quotes. *(this is your secure hash)*
@@ -60,7 +62,8 @@ After you have copied the string from Salt, replace the `your-top-secret-key` wi
 
 <br>
 
-## How to generate a token
+### How to generate a token
+
 If you read the [plugin documentation](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) they give examples for Angular, but unfortunately, not React.
 
 The important thing that we CAN glean from the plugin, however, are the routes that JWT Plugin creates in the WP REST API.
@@ -110,7 +113,7 @@ The return of this will include the following fields: Token, User Nicename,  Ema
 
 **Example:**
 
-```
+```json
 {
     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9qd3QuZGV2IiwiaWF0IjoxNDM4NTcxMDUwLCJuYmYiOjE0Mzg1NzEwNTAsImV4cCI6MTQzOTE3NTg1MCwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.YNe6AyWW4B7ZwfFE5wJ0O6qQ8QFcYizimDmBy6hCH_8",
     "user_display_name": "admin",
@@ -121,7 +124,7 @@ The return of this will include the following fields: Token, User Nicename,  Ema
 
 <br>
 
-## How to validate a token
+### How to validate a token
 
 As we did with the creation of token, you can also validate the token with a predefined route.
 
@@ -156,7 +159,7 @@ fetch(apiServer+"/jwt-auth/v1/token", {
 
 If your token is valid, the response should look something like this:
 
-```
+```json
 {
   "code": "jwt_auth_valid_token",
   "data": {
@@ -165,23 +168,47 @@ If your token is valid, the response should look something like this:
 }
 ```
 
+<br>
 
-## Requests on a protected route
+### Requests on a protected route
+
+When making requests to a protected route, you will need to append the Authorization header with the token.
+
+The fetch component would look something like:
+
+```javascript
+fetch(apiServer+"/myRoute", {  
+    method: "POST",  
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token
+    },
+    body: JSON.stringify(payload)  
+})
+```
+
+Where the method would vary depending on your endpoint, and the payload would be anything that you need to serialize in the body of your request.
+
+<br>
+
+## Login Flow
 
 
+<br>
 
-# Login Flow
-
-
-## How to create a login
+### How to create a login
 
 
-## Saving your Token
+<br>
+
+### Saving your Token
 
 
+<br>
 
-# Returning Visitors
+## Returning Visitors
 
+<br>
 
-## Checking for a token in LocalStorage
+### Checking for a token in LocalStorage
 
