@@ -187,11 +187,63 @@ fetch(apiServer+"/myRoute", {
 })
 ```
 
-Where the method would vary depending on your endpoint, and the payload would be anything that you need to serialize in the body of your request.
+Where the `method` would vary depending on your endpoint, and the payload would be anything that you need to serialize in the body of your request.
 
 <br>
 
 ## Login Flow
+
+User login will consist of a few of cases. In the following sections, we will cover each case so that you can better understand setting this up in your application.
+
+<br>
+
+### New User Registration
+
+First, when someone is not a current user on the site, you will need to allow them to register.
+
+This is done by creating a registration form view in your application. The form should be stateful and should then submit via a fetch `POST` request that will send the state of the component to the Wordpress User Creation API.
+
+***Note:*** If you are building this using the 4 Geeks Academy boilerplate, you will be creating an action to `createUser()` in your context store. 
+
+The Wordpress Create User API is located at: `https://[yourdomain.com]/wp-json/wp/v2/users`
+
+If you look at the flowchart below, you will see an example of how the Registration should go. Note that if the user fails, we should throw error(s) and allow the user to fix them on the registration form.
+
+
+![New User Registration Flowchart](https://lh3.googleusercontent.com/MHHdToT2A7Vf6z9Xtixk0EG_ID6xCji_aPe8Wll72BB3W-wAP2kxhodSQK4NKoiQ48X6oyMx4VUo3261LEhAyzjbgoQrFduAnbY7hlfJnhOcK1ZJ-709oBr-pz9ofGHeF3Eil_t7wEe43l477Wkces71faVUzpqhwlecu8NFXvoKnZynCd2djr-fhmDf9ldjPaUlXbm67TD8lRqxNV9Ec632padm9B-p6byp6JgkCBxZ0gEaflZWcn6a-eASAsuHixpP7KxIFInPxJIw8MpDVir0hMqYatNnFgcSrhvRFA8rEHsy6-UIv6Gv6c89clw7Rw-iLAYPSbQWKz5NA0HLoZOEHUCtAihvSU6Q6tdbD29czgbMUQialLXs5cOhre_oM1c5-chEIFF0c4nTV3dvlVEcLYxXgm3ZW4sz73nE5hp7t_QQ5stIMyq8yig8zGBKJwl2twE1uV-kRtPGAdzaNpJdqIBRu-NVUGeqG9W1jB_zDbteWxNkggkn5w461Gm_ReH1UlJdqV01yAak8j530j_h1LeDsSgneyoYt4C0m6kzapRg6C_3irZnHRc40viGmZ-1oE-YWb_FJ3Y1ySvRQmq39R8HSazD9pI9Ueh9ege2yHW6VbS2cfb11wv5sQYyN3cpg4V0ENUu3CQfA0YMXPzSNph80g=w471-h421-no)
+
+<br>
+
+An example of the action that you should create to create a user is as follows:
+
+```javascript
+fetch(apiServer+"/wp/v2/users", {
+    method: "POST",
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer '+token
+    },
+    body: JSON.stringify(userData)
+})
+```
+
+Just like in our previous examples, apiServer should be your wordpress server location. The userData that we are stringifying in the body of the request should contain at minimum, the following required elements:
+
+```json
+{
+	"username": "username",
+	"email": "email",
+	"password": "password",
+}
+```
+
+Additional information is allowed and can be viewed here: [Wordpress User Route Arguments](https://developer.wordpress.org/rest-api/reference/users/#arguments-2)
+
+Since JWT is setup for protected routes, we will need to send a token when we connect to the endpoint.
+
+The best way that you can do this is to create a user account for the API and it's requests. Then you can create a method that generates a token for that user, so that it can be attached to any requests on the endpoint.
+
+***Note:*** I would also recommend storing this admin token in your application store so that you can check if there is already a token available when you perform requests.
 
 
 <br>
