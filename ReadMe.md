@@ -210,7 +210,7 @@ The Wordpress Create User API is located at: `https://[yourdomain.com]/wp-json/w
 If you look at the flowchart below, you will see an example of how the Registration should go. Note that if the user fails, we should throw error(s) and allow the user to fix them on the registration form.
 
 
-![New User Registration Flowchart](https://lh3.googleusercontent.com/MHHdToT2A7Vf6z9Xtixk0EG_ID6xCji_aPe8Wll72BB3W-wAP2kxhodSQK4NKoiQ48X6oyMx4VUo3261LEhAyzjbgoQrFduAnbY7hlfJnhOcK1ZJ-709oBr-pz9ofGHeF3Eil_t7wEe43l477Wkces71faVUzpqhwlecu8NFXvoKnZynCd2djr-fhmDf9ldjPaUlXbm67TD8lRqxNV9Ec632padm9B-p6byp6JgkCBxZ0gEaflZWcn6a-eASAsuHixpP7KxIFInPxJIw8MpDVir0hMqYatNnFgcSrhvRFA8rEHsy6-UIv6Gv6c89clw7Rw-iLAYPSbQWKz5NA0HLoZOEHUCtAihvSU6Q6tdbD29czgbMUQialLXs5cOhre_oM1c5-chEIFF0c4nTV3dvlVEcLYxXgm3ZW4sz73nE5hp7t_QQ5stIMyq8yig8zGBKJwl2twE1uV-kRtPGAdzaNpJdqIBRu-NVUGeqG9W1jB_zDbteWxNkggkn5w461Gm_ReH1UlJdqV01yAak8j530j_h1LeDsSgneyoYt4C0m6kzapRg6C_3irZnHRc40viGmZ-1oE-YWb_FJ3Y1ySvRQmq39R8HSazD9pI9Ueh9ege2yHW6VbS2cfb11wv5sQYyN3cpg4V0ENUu3CQfA0YMXPzSNph80g=w471-h421-no)
+![New User Registration Flowchart](https://lh3.googleusercontent.com/e1YxloTT1R3grj6f2RjkvmqGdu4SJmpJgxzTzQ-DINJtSXIYOKWOIic-xqL3fGqHY7x0Mz55qpUsQnQYSHawX5UfXHKswPEF3eDdhR5w5o1jxfnKshFwO8NPxjHZscLEizSmli2f=w2400)
 
 <br>
 
