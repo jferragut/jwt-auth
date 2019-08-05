@@ -276,20 +276,18 @@ generateToken: (username,password)=>{
 		})
 	})
 		.then(response => {
-         	if(response.status !== 200){
-            	return 'Connection error: '+response.status;
-         	}
+			if(response.status !== 200){
+				return 'Connection error: '+response.status;
+			}
 
-         	response.json(data => {
-				 store.user = data;
-				 store.loggedIn = true;
-				 setStore({
-					 store
-				 })
-         	})
-      	})
+			response.json(data => {
+				store.user = data;
+				store.loggedIn = true;
+				setStore({ store });
+			})
+		})
 		.catch(err=>{
-			return err
+			return err;
 		});
 }
 ```
@@ -382,14 +380,14 @@ checkToken: ()=>{
 			}
 		})
 			.then(response => {
-					response.json(data => {
-						// token is valid
-						setStore({
-							...store,
-							loggedIn: true
-						});
-					})
+				response.json(data => {
+					// token is valid
+					setStore({
+						...store,
+						loggedIn: true
+					});
 				})
+			})
 			.catch(err=>{
 				return err;
 			});
@@ -398,7 +396,7 @@ checkToken: ()=>{
 			...store,
 			loggedIn: false,
 			user: null
-		})
+		});
 	}
 }
 ```
