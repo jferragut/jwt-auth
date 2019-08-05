@@ -248,7 +248,56 @@ The best way that you can do this is to create a user account for the API and it
 
 <br>
 
-### How to create a login
+### How to create a user login
+
+Whenever you are creating your login, it's good to start by understanding the flow of your component.
+
+![Login Flow Diagram](https://lh3.googleusercontent.com/XvHPI0ryngb-iPi7t_H8Yo8IBE2kPEBok2K8QmtWQRu9uDWnjzcEZ2-iq27xXzhO3Ys13Ft-pS6F09Ym95Tzvqk_C4oLplmlkLRuycRXU_ib7u4aZBkvWHX380WI53MUF_eLg_NriUNN0-CCmmt1Pzt7LSjKxVPLdPdCCMVbvYxlcfychQvjYck2XUSIx_lpZdqGXcAVDsyHmiPN3NEvZ7Pe8_55UX6gPRJZgVyhgJrsrl16Tu7qxmldBIKFjZuoFfolowIXV9GqT3bCp58kOaVMFaLu9pJNGj-F9zItw5aEzTtoahxdcdUfOCqlIfq7UeMSJ-CvCgdDuUFhxzTbfQ4m7_uMGd6CHO3GdQsuF-u8w4d8JWPZlqhqB-jiwruuVurU2tE91DzIO0VxOERpVWoCNYFoZz4ki_uphTts1paDOCco11NoEuPQgmXuMFOr17o3V5xA5YbyLXTit8hpVRs2F-Nq3BIWAbUHsShRuzc6qOxQV9SfrCsRnbNtokPVVYzO5KeQteRhiDYYFs9KYyVWnAcEqGpzrbz89EZ8bX7s9wxzLIRQasHVba_V8PUnCerjoiJllYLJMxAv7P4H9SRma8Q0CGhMEGlyDLESYxvQ3o0wu-nb8r4lOs734LgmQxYTrM0Buh0LGXs8koVLlLFeo1MdKQ=w471-h641-no)
+
+Your login form should be a stateful component that tracks the username and password of anyone trying to login. (I also recommend using an input type password for your password field to obfuscate the password to potential onlookers.)
+
+At this point in your app, you will create an action in your store that generates a token for a user when provided a `username` and `password` as input.
+
+```javascript
+//example of action when using the 4Geeks context boilerplate
+generateToken: (username,password)=>{
+	let store = getStore();
+	// lets assume that you have a variable in your store for user to store user data when logged in
+	// and another variable for the login status
+
+	fetch(apiServer+"/jwt-auth/v1/token", {
+		method: "POST",
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			username: username,
+			password: password
+		})
+	})
+		.then(response => {
+         	if(response.status !== 200){
+            	return 'Connection error: '+response.status;
+         	}
+
+         	response.json(data => {
+				 store.user = data;
+				 store.loggedIn = true;
+				 setStore({
+					 store
+				 })
+				 return 'Success';
+         	})
+      	})
+		.catch(err=>{
+			return err
+		});
+}
+```
+
+This function should return an error if there is one and if not, will return `Success` as a string. Your component should catch this and then respond to each value.
+
+If `Success` store the current token in the user's localStorage, otherwise, display error context and allow the user to react accordingly.
 
 
 <br>
