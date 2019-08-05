@@ -331,7 +331,90 @@ Of course, during your current session, you don't need to access any of the data
 
 ## Returning Visitors
 
+When visitors are returning to your site we need to check if they have a token to know if they are still valid or need to log in again. The cool thing is that we can simply check all users to see if there is anything from us in localStorage and if not, we can assume they are a new user.
+
+If there is a token in localStorage, we want to validate it.
+
+![Validating Returning Users Flowchart](https://lh3.googleusercontent.com/aBUqoTm3ItMt041dUJFIiC24rElJ6VVMzmjf4TURxDpC7X-jAekRCDb-EaABrfWaKxTr6Kit1INLmoAdUT2DiRp1lSFi8D-bxJUOx47tDOkAgF8zqHYBT4_Gzuvd7QlESTb4MqAZDEkcFKXMxDtB4FewVzkWHaAMtNfnbtWsTQL-NN8Hb7s2EhRg6K1gmDFE8tZ3YcgM9Hy9bV6YM0IcYoIFXOL5QfjgnCPB1efz3xSXn3Ylu-X8rVGwFtKULau-7x7Ckuz1dO-iMSWHs_FUsQlq1QIBWRjjSBGhqE6MwhKkN9XCJXfCGJejdzIPGPktgFDtWo0SXKzAbmwLcyup-Zfaa4YIubH4dmDKOPbTf9tI5V0XJq3g7QWxuNjmZe3rHDvdsjnn1DMKs4QqgYX26-7TeTASbgvoILWyLEX5b19uM1wSYSTHzrZiH8rhf_o7TKi-9Oy66oqNBckFgcL3nB8jXIAIRIOTFusXyo6bJ-ZjD6PZP9umT4t03WzBi44gddu52j9ySrFfKH8RyPJKpxbWfG6lA-v1kwMPHhgNoXl3WBeknrL3AyWcIATAEiBzzBU3RLsH1PUTTBCtkrkKXDblY0j1UDBXz__MjG7Wekqj38GUFMjMbYo6FBMBEOkvTWt53aQa3-ydChhhhjdqAlC0aIlD7w=w741-h591-no)
+
+
 <br>
 
 ### Checking for a token in LocalStorage
 
+The above sequence is a bit more involved with more forks in it. Initially, as mentioned, we check all users that access the app to see if they have a Token in localStorage. We do so similarly to how we set the token.
+
+```javascript
+let tokenCheck = JSON.parse(localStorage.getItem)('yourApp-userData');
+if(tokenCheck!==null){
+	// token is present
+}else{
+	// token is not present
+}
+```
+
+In the section above, we check to see if the token exists in localStorage. That function will return `null` if there is no data in localStorage at the specified key. 
+
+This allows us to perform a conditional check and act accordingly. In the first area that states `token is present`, we would want to then validate the token. If it is valid, we would want to then store the token in the store so that we can access the data in our views.
+
+***Note:*** *You'll want to make sure that you also toggle the `loggedIn` to true on your store if you have validated and stored the user data in your app.*
+
+Else, if the `token is not present`, we want to then maybe grab the `user_nicename` to display on a welcome in the navbar, but don't force the user to log in until they attempt to visit a protected route.
+
+*(Think about how stores like Amazon greet users. They welcome you in the top bar with your first name, but they don't actually tell you to log in all the time. In actuality, they are only requesting login if your token has expired or if you are on a device they don't recognize.)*
+
+Looking at our last code snippet again, let's assume you are running that from an action in your store.
+
+```javascript
+checkToken: ()=>{
+	let store = getStore();
+	let tokenCheck = JSON.parse(localStorage.getItem('yourApp-userData'));
+
+	if(tokenCheck!==null){
+		// set current user data to store
+		store.user=tokenCheck;
+		setStore({store});
+
+		// fetch to validate current token
+		fetch(apiServer+"/jwt-auth/v1/token/validate", {
+			method: "POST",
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer '+token
+			}
+		})
+			.then(response => {
+					response.json(data => {
+						// token is valid
+						setStore({
+							...store,
+							loggedIn: true
+						});
+					})
+				})
+			.catch(err=>{
+				return err;
+			});
+	}else{
+		setStore({
+			...store,
+			loggedIn: false,
+			user: null
+		})
+	}
+}
+```
+
+The above function will check if there is anything in localStorage. If there is , we set current data in the store and then do a validate on the token. When data comes back, if it's valid, we set `loggedIn` to true in the store, otherwise we don't.
+
+Finally, if there is nothing in the localStorage, we set the `user` to null in the store and set `loggedIn` to false.
+
+<br>
+
+______
+
+## Conclusion
+
+This write-up was meant as a top level overview of users and tokens with your application and not as an in-depth breakdown. You will probably need to tailor the approach to your specific app, but hopefully you have gained some insight into working with JWT and tokenization.
+
+If you have any questions, feel free to post an issue on this repository or to ask your instructor.
