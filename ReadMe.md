@@ -252,7 +252,7 @@ The best way that you can do this is to create a user account for the API and it
 
 Whenever you are creating your login, it's good to start by understanding the flow of your component.
 
-![Login Flow Diagram](https://lh3.googleusercontent.com/XvHPI0ryngb-iPi7t_H8Yo8IBE2kPEBok2K8QmtWQRu9uDWnjzcEZ2-iq27xXzhO3Ys13Ft-pS6F09Ym95Tzvqk_C4oLplmlkLRuycRXU_ib7u4aZBkvWHX380WI53MUF_eLg_NriUNN0-CCmmt1Pzt7LSjKxVPLdPdCCMVbvYxlcfychQvjYck2XUSIx_lpZdqGXcAVDsyHmiPN3NEvZ7Pe8_55UX6gPRJZgVyhgJrsrl16Tu7qxmldBIKFjZuoFfolowIXV9GqT3bCp58kOaVMFaLu9pJNGj-F9zItw5aEzTtoahxdcdUfOCqlIfq7UeMSJ-CvCgdDuUFhxzTbfQ4m7_uMGd6CHO3GdQsuF-u8w4d8JWPZlqhqB-jiwruuVurU2tE91DzIO0VxOERpVWoCNYFoZz4ki_uphTts1paDOCco11NoEuPQgmXuMFOr17o3V5xA5YbyLXTit8hpVRs2F-Nq3BIWAbUHsShRuzc6qOxQV9SfrCsRnbNtokPVVYzO5KeQteRhiDYYFs9KYyVWnAcEqGpzrbz89EZ8bX7s9wxzLIRQasHVba_V8PUnCerjoiJllYLJMxAv7P4H9SRma8Q0CGhMEGlyDLESYxvQ3o0wu-nb8r4lOs734LgmQxYTrM0Buh0LGXs8koVLlLFeo1MdKQ=w471-h641-no)
+![Login Flow Diagram](https://lh3.googleusercontent.com/7SkoAFUY4z-LEvWOq7_7LQ2_zLeL6-Fj8kCUM8aGYhtpCCCjIn06E3KZjVlBouyXNiK5SG4efIAZoFQWhvHkiAg5QWk26wIIBggNGGh4dZ08vHtLUTma0wt2EiwNllZcG9r_TCJZ=w2400)
 
 Your login form should be a stateful component that tracks the username and password of anyone trying to login. (I also recommend using an input type password for your password field to obfuscate the password to potential onlookers.)
 
@@ -333,7 +333,7 @@ When visitors are returning to your site we need to check if they have a token t
 
 If there is a token in localStorage, we want to validate it.
 
-![Validating Returning Users Flowchart](https://lh3.googleusercontent.com/aBUqoTm3ItMt041dUJFIiC24rElJ6VVMzmjf4TURxDpC7X-jAekRCDb-EaABrfWaKxTr6Kit1INLmoAdUT2DiRp1lSFi8D-bxJUOx47tDOkAgF8zqHYBT4_Gzuvd7QlESTb4MqAZDEkcFKXMxDtB4FewVzkWHaAMtNfnbtWsTQL-NN8Hb7s2EhRg6K1gmDFE8tZ3YcgM9Hy9bV6YM0IcYoIFXOL5QfjgnCPB1efz3xSXn3Ylu-X8rVGwFtKULau-7x7Ckuz1dO-iMSWHs_FUsQlq1QIBWRjjSBGhqE6MwhKkN9XCJXfCGJejdzIPGPktgFDtWo0SXKzAbmwLcyup-Zfaa4YIubH4dmDKOPbTf9tI5V0XJq3g7QWxuNjmZe3rHDvdsjnn1DMKs4QqgYX26-7TeTASbgvoILWyLEX5b19uM1wSYSTHzrZiH8rhf_o7TKi-9Oy66oqNBckFgcL3nB8jXIAIRIOTFusXyo6bJ-ZjD6PZP9umT4t03WzBi44gddu52j9ySrFfKH8RyPJKpxbWfG6lA-v1kwMPHhgNoXl3WBeknrL3AyWcIATAEiBzzBU3RLsH1PUTTBCtkrkKXDblY0j1UDBXz__MjG7Wekqj38GUFMjMbYo6FBMBEOkvTWt53aQa3-ydChhhhjdqAlC0aIlD7w=w741-h591-no)
+![Validating Returning Users Flowchart](https://lh3.googleusercontent.com/_g6pb8mo4oVYo9qBqBPOjmVC8j5qQd1AwRbYYw-whI_rAy_ilcbaEQPZqOywlZpBojIv5x3S7jrcQGdNJ1NNu9fdToVX07ag3V26W79n8DhM0Rcjfgy6NBHEhvibJRxhgrcoQDCW=w2400)
 
 
 <br>
