@@ -304,6 +304,28 @@ If `Success` store the current token in the user's localStorage, otherwise, disp
 
 ### Saving your Token
 
+Now that you have obtained the token, the next step is to save it in localStorage for the user. This is super easy to do:
+
+```javascript
+localStorage.setItem('yourApp-userData', JSON.stringify({
+	token: token,
+	user_display_name: user_display_name,
+	user_email: user_email,
+	user_nicename: user_nicename
+})
+);
+```
+We stringify the data to avoid any issues with the object when storing it. If we didn't stringify, we would get a return of `[Object,Object]` when we try to access the data.
+
+Now, if you already have this data in your store and are within a context consumer when you set the token (as we mentioned previously), you can do the following:
+
+```javascript
+localStorage.setItem('yourApp-userData', JSON.stringify(store.user));
+```
+
+*(assuming that your store has been passed in as `store` and that your user token data was stored in `store.user`)*
+
+Of course, during your current session, you don't need to access any of the data from the localStorage because you have it in your store already. So whenever you check if a user is loggedIn, simply check the flag in your store and then make sure to pull data from the store.
 
 <br>
 
