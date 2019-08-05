@@ -286,7 +286,6 @@ generateToken: (username,password)=>{
 				 setStore({
 					 store
 				 })
-				 return 'Success';
          	})
       	})
 		.catch(err=>{
@@ -295,10 +294,9 @@ generateToken: (username,password)=>{
 }
 ```
 
-This function should return an error if there is one and if not, will return `Success` as a string. Your component should catch this and then respond to each value.
+This function should return an error if there is one and if not, will set `loggedIn` to true. Your component should be reactive to this and then respond in each case.
 
-If `Success` store the current token in the user's localStorage, otherwise, display error context and allow the user to react accordingly.
-
+If user `loggedIn` is true, store the current token in the user's localStorage. Otherwise, display error context and allow the user to react accordingly.
 
 <br>
 
