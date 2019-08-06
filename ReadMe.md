@@ -1,7 +1,8 @@
 # User Authentication with JWT
 by Jonathan J. Ferragut
 
-**Technologies:** Wordpress, JWT, Javascript, ReactJS
+**Technologies:** Wordpress, JWT, Javascript, ReactJS, React Context API, Fetch API <br>
+**Boilerplate *(optional)*:** [React WebApp with Context](https://github.com/4GeeksAcademy/react-hello-webapp)
 _____
 
 When developing headless Wordpress websites with React, we will often times need to set up Users for our site. This means private routes/requests, and the need to authenticate said requests.
