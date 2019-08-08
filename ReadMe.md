@@ -96,7 +96,7 @@ fetch(apiServer+"/jwt-auth/v1/token", {
 			return;
 		}
 
-		response.json(data => {
+		response.json().then().then(data => {
 			// Your code here
 		})
 	})
@@ -148,7 +148,7 @@ fetch(apiServer+"/jwt-auth/v1/token", {
 			return;
 		}
 
-		response.json(data => {
+		response.json().then(data => {
 			// Your code here
 		})
 	})
@@ -281,7 +281,7 @@ generateToken: (username,password)=>{
 				return 'Connection error: '+response.status;
 			}
 
-			response.json(data => {
+			response.json().then(data => {
 				store.user = data;
 				store.loggedIn = true;
 				setStore({ store });
@@ -343,6 +343,7 @@ The above sequence is a bit more involved with more forks in it. Initially, as m
 
 ```javascript
 let tokenCheck = JSON.parse(localStorage.getItem)('yourApp-userData');
+
 if(tokenCheck!==null){
 	// token is present
 }else{
@@ -381,7 +382,7 @@ checkToken: ()=>{
 			}
 		})
 			.then(response => {
-				response.json(data => {
+				response.json().then(data => {
 					// token is valid
 					setStore({
 						...store,
