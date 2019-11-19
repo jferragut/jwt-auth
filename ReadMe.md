@@ -55,7 +55,7 @@ Visit [Wordpress Salt](https://api.wordpress.org/secret-key/1.1/salt/) and copy 
 
 Screenshot: (string to copy is highlighted)
 
-![Screenshot of Wordpress Salt with String to Copy being highlighted](https://lh3.googleusercontent.com/bPnZaCI7OsRIKDZcSd5v7I8wSPFOSYTp8DVq4viHPZ9c1qVuAibQ9-pf4RXRhTNcyGXBuDweIa4nw7Y-mV8Y_77nyLKUOgyf_N3_Obg5MAkFtdDdGDhZnIAfSouWAapv0iwHqjNnfBlmY1Q43AaK6BpgCcIQ-PemzfhL4M22vCtLBplDlV79uyLv70KK0MmuafWte3dRBitb625YbobtHTbNy29vmGomYTEjwOLcYEIz4eu32hIAof_ZJpYGPiulxTxEbNtU0pT4pkcNXhTwG8lntOjrtf8YHWnLmkF18RHmNLASOulIElxUvE4la4k--O7cNzNXYYsZv32yc2_a6FfNaodcRNZtydJ5ac-PFKDDzfcdUnyW4bYxY-10wn5aQ6zsDtiA7NczCO420kL37ABOdI2oo9QO_TAaPLbe5ewZf9KW7UrCUIecsoG6K9QnCCdmQWIgMOHg627wyG6rYSOrrnka7N1uicJ75SPSobvaTHmXjTknjwQPP8uPQNYXDhICrdqixqEQ4s2Kqe3d-ZHQwFxfQHlQ-uMJ6__bBUp8W4csWPs6M1vVQRiWo_J0-hh_cbImoXGTiQoVz5_jCM-hAeib7QIUiFXgzgF7aLSn2KNDJSqt6iSJ3pBVEs1jmv3oqd6EZJw2OV2N12K4Rf9kpDsaAQ=w2986-h568-no) 
+![Screenshot of Wordpress Salt with String to Copy being highlighted](https://i.ibb.co/gg0CD6J/salt.png) 
 
 Don't worry about this being secure, the hash is generated every time you refresh this page.
 
@@ -211,7 +211,7 @@ The Wordpress Create User API is located at: `https://[yourdomain.com]/wp-json/w
 If you look at the flowchart below, you will see an example of how the Registration should go. Note that if the user fails, we should throw error(s) and allow the user to fix them on the registration form.
 
 
-![New User Registration Flowchart](https://lh3.googleusercontent.com/lWEt-xf-L-Es8QFsjPyxQAfP6MAkRjXgTz8qy4uwzwAlWGzSuu3fu74XeGXuUuDOXo2X3MD02ef5V4KwuSf3tAvAdz7evULe1HyAVObr7pyT8wcW8DTA501rkOCehEuSssErTN5q9Yhyj0eT1-Eggmaweunpq5Wdx9chpDGHadf5gyin8KRXv9OGQ3_6yflICEnrd2ouv56-P-PaySrC7jioM51DQyTqREuUZPclKQWf3xQbSpKB_Lp9xbSXqPlvr5O-EJ7Q4OfxDgvmpHb7t2e02OrCp0NnC849cvkfNr2X-diJawPz4edNKgqXei0JSOXaqL-5naGeTNSbsl-fEcOaMr5HSWrc7ZAZu8Z_cKCfPiky8QRSvfAVKhY0pfuSFkOiAm0gBTIivQHk2rjamYX6QbbQp5QvkqOIJw5IQWplPpe1DsJydmDBYyZX8bWz561P6rrsQXQ4-r9Vrzy-LYKOS7QOCGn924Q_cieRBNdQKj2f0ROMw9y-IwAaCeuyCU21wxUU8gDfcSujunOslYxqE0ES5N1R7wBkDo96AQ_py0I32ORNgZGpA87gY3Km-KGqC6ogfaBJW6TvegUSvjK1tNiRj5mGBmHX56ghn7Krv3ofoDNEKUwhDu8K2Ilj2KpYei6NvD6AZfO7Oj6XQ8FnBTCKfw=w471-h421-no)
+![New User Registration Flowchart](https://i.ibb.co/w6HLLdb/Registration.png)
 
 <br>
 
@@ -253,7 +253,7 @@ The best way that you can do this is to create a user account for the API and it
 
 Whenever you are creating your login, it's good to start by understanding the flow of your component.
 
-![Login Flow Diagram](https://lh3.googleusercontent.com/QsJ-TZaQ1oTHtCsi0J8WIUZxsByzT_whdOrRssGQ4i9JDSF4G6MHD_hTt0Mp8YysdKq2rThUypqxk8bTnhVXL4RZlQyImxs5WBvINQrlYWLfVGERKz_adLBsCENE5mHfFkcNDEiajE1oB3Ik-Q41njZxZrTWytKbnfL6XwTzf4r2812V3b6Ct2j3s7BDHlYiwSiwf6DON7zewptkG0GHf1HkkFFoFdcJFjWQmvhKc8AoUN73RFwadSo6MT2PhfzmNwj2cBgGKtt8vwF7GIcjHYBcXOSKXcxZR40oKD1aiKDmUx7f13nVjDSrqSHMk_6GJJ-4uDzFj9ZXjDNJHFcfZrNOYo_0Wzc20vHLnySEq4p6TKOEfhkdO0GbCAcikwDuOQzVml0-CK0gcNAla1ySlRrMVKaB86dStVlngpNCkdX5enGlzxmHAHHgMWm9KbTSekPTZ0BGVftD_pvi54E2UEHoeiV8kZSx2iiAEGo7WHFo_wSAicQZSG_ibS9MaJefbKI8gp8SIKeM-fL32D7hj2GPFbqHV9eDuMEK4JpkcMtkO0OoCcfv7Om1x8MkatKJaqMDJCGiyUtGwWpQHHGcntFq4LU478eUYrEX2Ob6HkeCRfaifWUUC-x-3xdGEBpAGCrVRPiiRN24XH810m9zWZNjF_QpIg=w471-h641-no)
+![Login Flow Diagram](https://i.ibb.co/KF6zQ2p/Login-Flow.png)
 
 Your login form should be a stateful component that tracks the username and password of anyone trying to login. (I also recommend using an input type password for your password field to obfuscate the password to potential onlookers.)
 
@@ -332,8 +332,7 @@ When visitors are returning to your site we need to check if they have a token t
 
 If there is a token in localStorage, we want to validate it.
 
-![Validating Returning Users Flowchart](https://lh3.googleusercontent.com/XDkxsW50_9afKW_2EoYyyaKwTpDfTsEYwkEhFP760AWqBeB2G1oqU0fvaPNSrGrrGKlQJ0a8TdGZlkVpK7-I0HMQ1pBD81nwTz9r5vdVf49evb6esBe-XJyqym__IIsh4rA7sfy8BrK1TBS5ms8oV4rfVJOTRqNADiGGvaY8LgUViX7SzceSyvVO9clBcnNQuc4lj9VZoOO33CjA3qIFcBSxG8PUTX4KunbLXlLSR_7v1UkIn_VDvmWAw20D-Hg2Mah3uVMCjzSs3xtM5xMrIWuHWXnylwN5tULgkhfXegO8AY1ayow5LyEeV6aKB5BY4NF1O03rDDZ6MFgdsb5ctov-rtoBH40DII_VXEks-IzYd8z9_q1sw7VT2IFKVY_PUU41qD-rBVQ_ojQVelFyse2-6cDy_9d6bF8H9BR84f5H_mKGTkquQ-c6PjpLWprtahvcHkZQI6zg0c0-qKu5PgxBLmeyxadinA5oPbpezCJ7_nkzPqnUX98m86zXafJyDOfj9hrAuqOebo7p16gsELkCy4q7TlHflMPqSaXoK4m4DoZxDCaUxlbmj_JKx7cTaBXj5V6Dcd8X9yGDEV7L6AH9jzEbVlukdvBsXWsDk5xM_O3husHy2RgyZ9MREyPVWx9SA32Q_wSCpegq23uyaUFxOqY6Qw=w741-h591-no)
-
+![Validating Returning Users Flowchart](https://i.ibb.co/QY4ZW7X/Check-for-Token.png)
 
 <br>
 
