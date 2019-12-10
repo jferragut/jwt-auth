@@ -262,7 +262,6 @@ At this point in your app, you will create an action in your store that generate
 ```javascript
 //example of action when using the 4Geeks context boilerplate
 generateToken: (username,password)=>{
-	let store = getStore();
 	// lets assume that you have a variable in your store for user to store user data when logged in
 	// and another variable for the login status
 
@@ -282,9 +281,10 @@ generateToken: (username,password)=>{
 			}
 
 			response.json().then(data => {
-				store.user = data;
-				store.loggedIn = true;
-				setStore({ store });
+				setStore({
+					user: data,
+					loggedIn: true
+				});
 			})
 		})
 		.catch(err=>{
@@ -364,13 +364,11 @@ Looking at our last code snippet again, let's assume you are running that from a
 
 ```javascript
 checkToken: ()=>{
-	let store = getStore();
 	let tokenCheck = JSON.parse(localStorage.getItem('yourApp-userData'));
 
 	if(tokenCheck!==null){
 		// set current user data to store
-		store.user=tokenCheck;
-		setStore({store});
+		setStore({ user: tokenCheck });
 
 		// fetch to validate current token
 		fetch(apiServer+"/jwt-auth/v1/token/validate", {
@@ -383,10 +381,7 @@ checkToken: ()=>{
 			.then(response => {
 				response.json().then(data => {
 					// token is valid
-					setStore({
-						...store,
-						loggedIn: true
-					});
+					setStore({ loggedIn: true });
 				})
 			})
 			.catch(err=>{
@@ -394,7 +389,6 @@ checkToken: ()=>{
 			});
 	}else{
 		setStore({
-			...store,
 			loggedIn: false,
 			user: null
 		});
