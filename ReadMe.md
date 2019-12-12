@@ -96,7 +96,7 @@ fetch(apiServer+"/jwt-auth/v1/token", {
 			return;
 		}
 
-		response.json().then().then(data => {
+		response.json().then(data => {
 			// Your code here
 		})
 	})
