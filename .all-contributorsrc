@@ -17,7 +17,11 @@
   "repoHost": "https://github.com",
   "skipCi": true,
   "files": [
-    "README.md"
-  ],
-  "contributorsPerLine": 7
+        "README.md",
+        "on-tokenization.md",
+        "python-setup.md",
+        "wp-setup.md",
+        "react-setup.md"
+    ],
+    "contributorsPerLine": 7
 }
