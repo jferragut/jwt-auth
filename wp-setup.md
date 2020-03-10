@@ -54,3 +54,17 @@ Screenshot: (string to copy is highlighted)
 Don't worry about this being secure, the hash is generated every time you refresh this page.
 
 After you have copied the string from Salt, replace the `your-top-secret-key` with it.
+
+
+____
+
+## Caviats with React
+
+If you read the [plugin documentation](https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/) they give examples for Angular, but unfortunately, not React.
+
+The important thing that we CAN glean from the plugin, however, are the routes that JWT Plugin creates in the WP REST API.
+
+For:
+
+- Token Generation, we will use the `/jwt-auth/v1/token` route.
+- Token Validation, we will use the `/jwt-auth/v1/token/validate` route.
