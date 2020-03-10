@@ -8,9 +8,4 @@ _____
 
 ## Setting up the boilerplate
 
-
 ## Installing Flask-JWT-Simple
-
-
-##
-

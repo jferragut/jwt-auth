@@ -51,4 +51,3 @@ If you are interested in becoming a contributor to this open source project, ple
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
