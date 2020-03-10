@@ -1,5 +1,23 @@
 {
-    "projectName": "jwt-auth",
-    "projectOwner": "jferragut",
-    "contributors": []
+  "projectName": "jwt-auth",
+  "projectOwner": "jferragut",
+  "contributors": [
+    {
+      "login": "jferragut",
+      "name": "Jonathan Ferragut",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/31458614?v=4",
+      "profile": "http://www.alkemyinc.com",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "files": [
+    "README.md"
+  ],
+  "contributorsPerLine": 7
 }
