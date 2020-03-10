@@ -1,15 +1,12 @@
-**Technologies:** Wordpress, JWT, Javascript, ReactJS, React Context API, Fetch API <br>
+# Setting up your Python 3 Backend for JWT
+
+**Technologies:** Wordpress, JWT plugin<br>
 
 _____
 
 When developing headless Wordpress websites with React, we will often times need to set up Users for our site. This means private routes/requests, and the need to authenticate said requests.
 
-In the following sections, we will discuss some caveats and scenarios that will help you to better understand the workflow of setting up JWT on Wordpress and subsequently dealing with requests in React using Fetch API.
-
-This document assumes that you have:
- 1. Installed and configured a Wordpress install already
- 2. Have a Frontend developed in ReactJS
- 3. Are familiar with HTTP Requests
+In the following sections, we will discuss some caveats and scenarios that will help you to better understand the workflow of setting up JWT on Wordpress.
 
 **Note:** All routes on the Wordpress API will start with `https://yourdomain.com/wp-json/`, where `yourdomain.com` should be replaced with the domain/host that you are using for your server. If you are using Gitpod, this will be a workspace URL that is assigned randomly to your instance. This will look something like:  `https://ffe4c36b-7ff9-4057-ba10-634bd14f8182.ws-us0.gitpod.io`
 
