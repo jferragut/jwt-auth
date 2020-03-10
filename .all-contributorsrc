@@ -1,3 +1,28 @@
 {
-    
+  "projectName": "jwt-auth",
+  "projectOwner": "jferragut",
+  "contributors": [
+    {
+      "login": "hernanjkd",
+      "name": "Hernán García",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/49590907?v=4",
+      "profile": "https://www.linkedin.com/in/hernan-garcia-448400186/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "files": [
+        "README.md",
+        "on-tokenization.md",
+        "python-setup.md",
+        "wp-setup.md",
+        "react-setup.md"
+    ],
+    "contributorsPerLine": 7
 }
+
