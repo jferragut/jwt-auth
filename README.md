@@ -9,7 +9,7 @@ ______
 
 The idea behind creating secured web applications is far from a new concept. In modern coding practices there are many ways to secure your applications, but the one we will cover in this repository will be setting up the front and back end using tokenization.
 
-For coverage on the topic of tokenization, please refer to the `on-tokenization.md` file in this repository.
+For coverage on the topic of tokenization, please refer to the `on-tokenization.md` (**PENDING**)file in this repository.
 
 This document assumes that you have:
 
