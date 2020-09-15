@@ -2,7 +2,7 @@
 
 by Jonathan J. Ferragut
 
-Last Revised: 3/10/2020
+Last Revised: 9/15/2020
 ______
 
 ## Introduction
@@ -23,7 +23,7 @@ ______
 
 ### For the Tokenization Novice
 
-- First brush up on Tokenization concepts by reading `on-tokenization.md`
+- First brush up on Tokenization concepts by reading `on-tokenization.md` (**PENDING**)
 - Next, choose your backend and read the corresponding file (`wp-setup.md` for wordpress, or `python-setup.md` for python)
 - Finally, you will need to configure your FrontEnd webapp to work with the api you've developed, so read the `react-setup.md` document.
 
