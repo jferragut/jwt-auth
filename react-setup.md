@@ -290,7 +290,7 @@ If there is a token in localStorage, we want to validate it.
 The above sequence is a bit more involved with more forks in it. Initially, as mentioned, we check all users that access the app to see if they have a Token in localStorage. We do so similarly to how we set the token.
 
 ```javascript
-let tokenCheck = JSON.parse(localStorage.getItem)('yourApp-userData');
+let tokenCheck = JSON.parse(localStorage.getItem('yourApp-userData'));
 
 if(tokenCheck!==null){
 	// token is present, so do something (set loggedIn, maybe?)
